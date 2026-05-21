@@ -1,14 +1,15 @@
-# Presentations.AI — Claude Skills
+# Presentations.AI — Agent Skills
 
-Public skills repository for [Presentations.AI](https://presentations.ai) —
-Claude-compatible skills that turn ideas, files, or outlines into complete,
-designed presentations.
+Public Agent Skills repository for [Presentations.AI](https://presentations.ai)
+— skills that turn ideas, files, or outlines into complete, designed
+presentations. Compatible with Claude.ai, Claude Desktop, Claude Code, and any
+client that adopts the [Anthropic Agent Skills](https://agentskills.io) format.
 
 ## What's in here
 
 | Skill | Purpose |
 |---|---|
-| [`presentations-ai/SKILL.md`](./presentations-ai/SKILL.md) | Guides Claude through the four creation flows: from a topic, from raw text, from a file, or a single slide. Covers preservation modes, async job polling, and routing rules. |
+| [`presentations-ai/SKILL.md`](./presentations-ai/SKILL.md) | Guides the agent through the four creation flows: from a topic, from raw text, from a file, or a single slide. Covers preservation modes, async job polling, and routing rules. |
 | [`presentations-ai/references/REFERENCE.md`](./presentations-ai/references/REFERENCE.md) | Detailed parameter reference for every Presentations.AI MCP tool. Read this when you need exact field names or constraints. |
 
 ## Companion connector
