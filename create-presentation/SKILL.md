@@ -2,6 +2,7 @@
 name: create-presentation
 description: Creates a designed slide deck with Presentations.AI from a topic, the user's text, or a reviewed outline, and delivers it as a PowerPoint, PDF, or slide images. Use when the user asks for a presentation, deck, slides, or a pitch deck.
 license: MIT
+compatibility: Requires the Presentations.AI MCP server (https://api.presentations.ai/mcp).
 ---
 
 # Create a presentation
