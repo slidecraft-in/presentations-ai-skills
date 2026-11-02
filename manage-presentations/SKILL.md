@@ -2,6 +2,7 @@
 name: manage-presentations
 description: Finds, inspects, renames, moves, shares, downloads again, or deletes presentations that already exist in the user's Presentations.AI workspace. Use when the user refers to a deck they already have; not for creating a new one.
 license: MIT
+compatibility: Requires the Presentations.AI MCP server (https://api.presentations.ai/mcp).
 ---
 
 # Manage existing presentations

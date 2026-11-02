@@ -35,6 +35,17 @@ get both skills from the server itself.
   which includes both skills and the server, or run
   `gemini skills install https://github.com/slidecraft-in/presentations-ai-skills.git`.
 
+## Upgrading from the old `presentations-ai` skill
+
+The earlier `presentations-ai` skill uses tools the server no longer has. Remove it before
+installing these two:
+
+- **Claude:** in **Customize → Skills**, open `presentations-ai`, click **…** next to the
+  toggle, and choose **Delete**.
+- **Claude Code:** delete the `presentations-ai` folder from `~/.claude/skills/` or
+  `.claude/skills/`.
+- **Gemini CLI:** run `gemini skills uninstall presentations-ai`.
+
 ## Support
 
 - Docs: [docs.presentations.ai/docs/agents](https://docs.presentations.ai/docs/agents)
