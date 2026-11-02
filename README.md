@@ -1,60 +1,45 @@
-# Presentations.AI — Agent Skills
+# Presentations.AI Agent Skills
 
-Public Agent Skills repository for [Presentations.AI](https://presentations.ai)
-— skills that turn ideas, files, or outlines into complete, designed
-presentations. Compatible with Claude.ai, Claude Desktop, Claude Code, and any
-client that adopts the [Anthropic Agent Skills](https://agentskills.io) format.
+[Agent Skills](https://agentskills.io) for [Presentations.AI](https://www.presentations.ai).
+They walk an agent through making designed slide decks and managing existing ones with the
+Presentations.AI MCP server.
 
-## What's in here
-
-| Skill | Purpose |
+| Skill | Use it to |
 |---|---|
-| [`presentations-ai/SKILL.md`](./presentations-ai/SKILL.md) | Guides the agent through the four creation flows: from a topic, from raw text, from a file, or a single slide. Covers preservation modes, async job polling, and routing rules. |
-| [`presentations-ai/references/REFERENCE.md`](./presentations-ai/references/REFERENCE.md) | Detailed parameter reference for every Presentations.AI MCP tool. Read this when you need exact field names or constraints. |
+| [`create-presentation`](create-presentation/SKILL.md) | Create a deck from a topic, the user's text, or a reviewed outline, and deliver it as a PowerPoint, PDF, or slide images. |
+| [`manage-presentations`](manage-presentations/SKILL.md) | Find, inspect, rename, move, share, download again, or delete decks that already exist. |
 
-## Companion connector
+## Requirements
 
-These skills pair naturally with the **Presentations.AI MCP connector**:
+The skills use the tools of the Presentations.AI MCP server, so connect it first:
 
-- **Connector URL**: `https://api.presentations.ai/mcp`
-- **Auth**: OAuth 2.0 with PKCE + Dynamic Client Registration
-- **Listed in**: the Claude.ai Connectors Directory once approved
+```
+https://api.presentations.ai/mcp
+```
 
-The skills also work standalone — they describe the workflow even without the
-connector loaded — but you get the best experience with both enabled.
+Setup steps for each client are in
+[presentations-ai-mcp-server](https://github.com/slidecraft-in/presentations-ai-mcp-server#connect-from-your-mcp-client).
+Clients that support the [MCP Skills extension](https://modelcontextprotocol.io/extensions/skills/overview)
+get both skills from the server itself.
 
-## Five active tools (v0.3.2)
+## Install
 
-The Presentations.AI MCP server currently exposes:
-
-- `create_presentation_from_topic` — full deck from a topic
-- `create_single_slide` — one slide from a topic
-- `create_presentation_from_content` — raw text → designed slides
-- `create_presentation_from_file` — PDF / DOCX / PPTX / TXT / MD → designed slides
-- `check_job_status` — poll an async creation job
-
-Four tools (`create_presentation_from_slides`, `create_document_from_content`,
-`update_document_content`, `refresh_presentation`) are temporarily disabled
-upstream. The skill is written to use only the active surface.
-
-## Installation
-
-Add the connector first (so the model has tools available):
-
-1. Visit the Claude.ai Connectors Directory and add **Presentations.AI**, or
-2. Open Claude Desktop → Settings → Connectors → Add Connector → URL
-   `https://api.presentations.ai/mcp`
-
-Then point Claude at this repo as a skill source (slash-command install) or
-copy `presentations-ai/SKILL.md` into your local Claude skill directory.
-
-## License
-
-MIT. See [LICENSE](./LICENSE).
+- **Claude (claude.ai and Claude Desktop):** zip a skill folder, then go to
+  **Customize → Skills**, click **+**, choose **Create skill → Upload a skill**, and upload
+  the ZIP. Repeat for the second skill. Skills need **Code execution and file creation**
+  turned on under **Settings → Capabilities**.
+- **Claude Code:** copy both folders into `~/.claude/skills/` (all projects) or
+  `.claude/skills/` (one project).
+- **Gemini CLI:** install the
+  [Gemini CLI extension](https://github.com/slidecraft-in/presentations-ai-gemini-extension),
+  which includes both skills and the server, or run
+  `gemini skills install https://github.com/slidecraft-in/presentations-ai-skills.git`.
 
 ## Support
 
-- Docs: <https://console.presentations.ai/apiref/docs/>
-- Email: <support@presentations.ai>
-- Privacy: <https://presentations.ai/privacy>
-- Terms: <https://presentations.ai/terms>
+- Docs: [docs.presentations.ai/docs/agents](https://docs.presentations.ai/docs/agents)
+- Email: `support@presentations.ai`
+
+## License
+
+MIT, see [LICENSE](LICENSE).
